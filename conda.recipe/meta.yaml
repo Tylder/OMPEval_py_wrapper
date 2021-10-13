@@ -1,6 +1,6 @@
 package:
   name: ompeval
-  version: 0.0.1
+  version: 0.0.11
 
 source:
   path: ..
@@ -18,15 +18,15 @@ requirements:
   host:
     - python
     - pip
-    - numpy
 
   run:
     - python
-
+    - numpy
 
 test:
   requires:
     - pytest
+    - numpy
   imports:
     - ompeval
   source_files:
