@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         platform: [ubuntu-latest, windows-2016, macos-latest]
-        python-version: ["3.6", "3.8"]
+        python-version: ["3.6", "3.8", ]
 
     runs-on: ${{ matrix.platform }}
 
@@ -41,7 +41,7 @@ jobs:
         run: conda build conda.recipe
 
       - name: Install
-        run: conda install -c ${CONDA_PREFIX}/conda-bld/ cmake_example
+        run: conda install -c ${CONDA_PREFIX}/conda-bld/ ompeval
 
       - name: Test
         run: python -m pytest

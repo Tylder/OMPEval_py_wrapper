@@ -12,12 +12,12 @@ def test_main():
     ]
 
     eq = ompeval.EquityCalculator()
-    eq.set_hand_limit(10**6)
+    eq.set_hand_limit(1000)
 
     eq.start(hand_ranges=ranges)
     eq.wait()
 
     res = eq.get_results()
 
-    assert res.finished == True
+    assert res.finished is True
 
