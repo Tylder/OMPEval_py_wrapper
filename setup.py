@@ -8,6 +8,7 @@ from setuptools import setup, Extension
 from setuptools.command.build_ext import build_ext
 
 # Convert distutils Windows platform specifiers to CMake -A arguments
+
 PLAT_TO_CMAKE = {
     "win32": "Win32",
     "win-amd64": "x64",
@@ -119,17 +120,34 @@ class CMakeBuild(build_ext):
             ["cmake", "--build", "."] + build_args, cwd=self.build_temp
         )
 
+# ext_modules = [
+#     # Extension(
+#     #     'omp_eval',
+#     #     sources = [
+#     #         'extern/OMPEval/omp/CardRange.cpp'
+#     #         'extern/OMPEval/omp/CombinedRange.cpp'
+#     #         'extern/OMPEval/omp/EquityCalculator.cpp'
+#     #         'extern/OMPEval/omp/HandEvaluator.cpp'
+#     #     ],
+#     #     include_dirs=[''],
+#     #     language='c++'
+#     # ),
+#     CMakeExtension("ompeval"),
+#     # CMakeExtension("omp_eval"),
+# ]
+
 
 # The information here can also be placed in setup.cfg - better separation of
 # logic and declaration, and simpler if you include description/version in a file.
 setup(
-    name="cmake_example",
-    version="0.0.1",
-    author="Dean Moldovan",
-    author_email="dean0x7d@gmail.com",
+    name="ompeval",
+    version="0.0.11",
+    author="Daniel Lofgren",
+    author_email="xx@xx.com",
     description="A test project using pybind11 and CMake",
     long_description="",
-    ext_modules=[CMakeExtension("cmake_example")],
+    # ext_modules=ext_modules,
+    ext_modules=[CMakeExtension("ompeval")],
     cmdclass={"build_ext": CMakeBuild},
     zip_safe=False,
     extras_require={"test": ["pytest"]},

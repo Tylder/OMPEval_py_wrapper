@@ -6,4 +6,4 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   cmake_example
+   ompeval

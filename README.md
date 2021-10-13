@@ -1,4 +1,4 @@
-# cmake_example for pybind11
+# OMPEval Python Wrapper
 
 [![Gitter][gitter-badge]][gitter-link]
 
@@ -21,15 +21,7 @@
 [appveyor-link]:           https://ci.appveyor.com/project/dean0x7d/cmake-example/branch/master
 [appveyor-badge]:          https://ci.appveyor.com/api/projects/status/57nnxfm4subeug43/branch/master?svg=true
 
-An example [pybind11](https://github.com/pybind/pybind11) module built with a
-CMake-based build system. This is useful for C++ codebases that have an
-existing CMake project structure. This is in many cases superseded by
-[`scikit_build_example`](https://github.com/pybind/scikit_build_example), which uses
-[scikit-build][], a tool from the makers of CMake designed to allow Python
-packages to be driven from CMake. However, there are still cases where you
-might want full control over the CMake run; and both of these approaches have
-some trade-offs not present in a pure setuptools build (see
-[`python_example`](https://github.com/pybind/python_example))
+Python wrapper for the excellent C++ Poker hand evaluator and equity calculator OMPEval https://github.com/zekyll/OMPEval
 
 ## Prerequisites
 
