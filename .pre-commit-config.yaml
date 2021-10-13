@@ -36,11 +36,11 @@ repos:
   - id: black
     exclude: ^docs/conf.py$
 
-# Changes tabs to spaces
-- repo: https://github.com/Lucas-C/pre-commit-hooks
-  rev: v1.1.9
-  hooks:
-  - id: remove-tabs
+## Changes tabs to spaces
+#- repo: https://github.com/Lucas-C/pre-commit-hooks
+#  rev: v1.1.9
+#  hooks:
+#  - id: remove-tabs
 
 - repo: https://gitlab.com/pycqa/flake8
   rev: 3.8.3

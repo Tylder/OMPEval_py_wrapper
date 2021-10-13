@@ -31,12 +31,14 @@ def test_evaluator():
     # in order = spade, heart, clubs, diamond
 
     # AdAs2s2h2c
-    hand = ompeval.Hand.empty() + \
-           ompeval.Hand(51) + \
-           ompeval.Hand(48) + \
-           ompeval.Hand(0) + \
-           ompeval.Hand(1) + \
-           ompeval.Hand(2)
+    hand = (
+        ompeval.Hand.empty()
+        + ompeval.Hand(51)
+        + ompeval.Hand(48)
+        + ompeval.Hand(0)
+        + ompeval.Hand(1)
+        + ompeval.Hand(2)
+    )
 
     evaluator = ompeval.HandEvaluator()
     value = evaluator.evaluate(hand)  # 28684 = 7 * 4096 + 12

@@ -120,22 +120,6 @@ class CMakeBuild(build_ext):
             ["cmake", "--build", "."] + build_args, cwd=self.build_temp
         )
 
-# ext_modules = [
-#     # Extension(
-#     #     'omp_eval',
-#     #     sources = [
-#     #         'extern/OMPEval/omp/CardRange.cpp'
-#     #         'extern/OMPEval/omp/CombinedRange.cpp'
-#     #         'extern/OMPEval/omp/EquityCalculator.cpp'
-#     #         'extern/OMPEval/omp/HandEvaluator.cpp'
-#     #     ],
-#     #     include_dirs=[''],
-#     #     language='c++'
-#     # ),
-#     CMakeExtension("ompeval"),
-#     # CMakeExtension("omp_eval"),
-# ]
-
 
 # The information here can also be placed in setup.cfg - better separation of
 # logic and declaration, and simpler if you include description/version in a file.

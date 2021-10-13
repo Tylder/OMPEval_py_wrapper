@@ -137,4 +137,3 @@ PYBIND11_MODULE(ompeval, m) {
     m.attr("__version__") = "dev";
 #endif
 }
-
