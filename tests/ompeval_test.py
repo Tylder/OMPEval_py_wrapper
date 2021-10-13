@@ -15,9 +15,9 @@ def test_equity():
     ]
 
     eq = ompeval.EquityCalculator()
-    eq.set_hand_limit(1000) # super low since its just a test
+    eq.set_hand_limit(500)  # super low since its just a test
 
-    eq.start(hand_ranges=ranges)
+    eq.start(hand_ranges=ranges, thread_count=1)
     eq.wait()
 
     res = eq.get_results()
