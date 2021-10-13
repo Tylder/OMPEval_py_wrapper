@@ -1,0 +1,7 @@
+FROM lofgrendaniel87/cpp_python_dev
+
+RUN pip install scikit-build cmake pybind11
+#RUN pip install "pybind11[global]"
+
+#COPY . /tmp/
+#RUN pip install ./tmp/skbuild

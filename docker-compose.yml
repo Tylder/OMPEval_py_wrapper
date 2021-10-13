@@ -1,0 +1,9 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  dev:
+    build:
+      dockerfile: Dockerfile.dev.pybind11
+    ports:
+      - 2224:22 # ssh
+    cap_add:
+      - SYS_PTRACE # for debugging
