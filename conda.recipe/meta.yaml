@@ -1,5 +1,5 @@
 package:
-  name: cmake_example
+  name: ompeval
   version: 0.0.1
 
 source:
@@ -27,12 +27,12 @@ test:
   requires:
     - pytest
   imports:
-    - cmake_example
+    - ompeval
   source_files:
     - tests
   commands:
     - python -m pytest
 
 about:
-  summary: A CMake example project built with pybind11.
+  summary: Python Wrapper for OMPEval.
   license_file: LICENSE

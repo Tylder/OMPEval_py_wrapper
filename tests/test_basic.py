@@ -1,10 +1,23 @@
 # -*- coding: utf-8 -*-
-import cmake_example as m
-
-print(m.add(3, 3))
+import ompeval
 
 def test_main():
-    assert m.__version__ == "0.0.1"
-    assert m.add(1, 2) == 3
-    assert m.subtract(1, 2) == -1
+    assert ompeval.__version__ == "0.0.11"
+
+    ranges = [
+        ompeval.CardRange("65s"),
+        ompeval.CardRange("random"),
+        ompeval.CardRange("random"),
+        ompeval.CardRange("random"),
+    ]
+
+    eq = ompeval.EquityCalculator()
+    eq.set_hand_limit(10**6)
+
+    eq.start(hand_ranges=ranges)
+    eq.wait()
+
+    res = eq.get_results()
+
+    assert res.finished == True
 

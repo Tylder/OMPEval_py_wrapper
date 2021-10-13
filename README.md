@@ -43,8 +43,8 @@ Just clone this repository and pip install. Note the `--recursive` option which 
 needed for the pybind11 submodule:
 
 ```bash
-git clone --recursive https://github.com/pybind/cmake_example.git
-pip install ./cmake_example
+git clone --recursive https://github.com/Tylder/OMPEval_py_wrapper.git
+pip install ./OMPEval_py_wrapper
 ```
 
 With the `setup.py` file included in this example, the `pip install` command will
@@ -76,7 +76,7 @@ the extension module to generate beautiful documentation in a variety formats.
 The following command generates HTML-based reference documentation; for other
 formats please refer to the Sphinx manual:
 
- - `cd cmake_example/docs`
+ - `cd OMPEval_py_wrapper/docs`
  - `make html`
 
 
@@ -87,11 +87,26 @@ file. By using, distributing, or contributing to this project, you agree to the
 terms and conditions of this license.
 
 
-## Test call
+## Example
 
 ```python
-import cmake_example
-cmake_example.add(1, 2)
+import ompeval
+
+ranges = [
+    ompeval.CardRange("AK"),
+    ompeval.CardRange("random"),
+]
+board = ompeval.CardRange.getCardMask(text="")
+dead = ompeval.CardRange.getCardMask(text="")
+
+eq = ompeval.EquityCalculator()
+eq.set_hand_limit(10**6) # 1 million hands
+# eq.set_time_limit(0.02) # Could set a time limit as well, in seconds
+
+eq.start(hand_ranges=ranges, board_cards=board, dead_cards=dead, enumerate_all=False)
+eq.wait()
+
+res = eq.get_results()
 ```
 
 [`cibuildwheel`]:          https://cibuildwheel.readthedocs.io
