@@ -25,22 +25,22 @@ def test_equity():
     assert res.finished is True
 
 
-def test_evaluator():
-    # Create a Hand from a card. CardIdx is an integer between 0 and 51, so that CARD = 4 * RANK + SUIT, where
-    # rank ranges from 0 (deuce) to 12 (ace) and suit is from 0 (spade) to 3 (diamond).
-    # in order = spade, heart, clubs, diamond
-
-    # AdAs2s2h2c
-    hand = (
-        ompeval.Hand.empty()
-        + ompeval.Hand(51)
-        + ompeval.Hand(48)
-        + ompeval.Hand(0)
-        + ompeval.Hand(1)
-        + ompeval.Hand(2)
-    )
-
-    evaluator = ompeval.HandEvaluator()
-    value = evaluator.evaluate(hand)  # 28684 = 7 * 4096 + 12
-
-    assert value == 28684
+# def test_evaluator():
+#     # Create a Hand from a card. CardIdx is an integer between 0 and 51, so that CARD = 4 * RANK + SUIT, where
+#     # rank ranges from 0 (deuce) to 12 (ace) and suit is from 0 (spade) to 3 (diamond).
+#     # in order = spade, heart, clubs, diamond
+#
+#     # AdAs2s2h2c
+#     hand = (
+#         ompeval.Hand.empty()
+#         + ompeval.Hand(51)
+#         + ompeval.Hand(48)
+#         + ompeval.Hand(0)
+#         + ompeval.Hand(1)
+#         + ompeval.Hand(2)
+#     )
+#
+#     evaluator = ompeval.HandEvaluator()
+#     value = evaluator.evaluate(hand)  # 28684 = 7 * 4096 + 12
+#
+#     assert value == 28684
